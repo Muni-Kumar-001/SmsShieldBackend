@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS  # Import CORS
 import requests
 import re
 
 app = Flask(__name__)
+CORS(app)  # Enable CORS for all routes
 
 # External API URLs
 SPAM_API_URL = "https://spambackend2.onrender.com/api/check_spam"
