@@ -45,7 +45,6 @@ def analyze_message():
         # If URL exists, check both text and URL
         text_result = check_spam_text(message)
         url_result = check_url_safety(urls[0])  # Check first URL only
-        return jsonify({"result":text_result+" "+url_result})
         final_result = "Spam" if text_result == "spam" or url_result == "Spam" else "Ham"
     else:
         # If no URL, just check the message text
